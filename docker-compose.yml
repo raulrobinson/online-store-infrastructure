@@ -1,6 +1,22 @@
 version: '3.8'
 
 services:
+  # Postgres Database Service
+  postgres:
+    image: postgres:15.2-alpine3.17
+    container_name: realtime-postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=realtime
+      - POSTGRES_PASSWORD=realtime
+      - POSTGRES_DB=realtime
+      - SCHEMA=realtime
+    ports:
+      - "15432:5432"
+    volumes:
+      - db_data_realtime:/var/lib/postgresql/data
+
+  # Zookeeper Service
   zookeeper:
     image: bitnami/zookeeper:latest
     environment:
@@ -10,6 +26,7 @@ services:
     volumes:
       - zookeeper_data:/bitnami/zookeeper
 
+  # Kafka Service
   kafka:
     image: bitnami/kafka:latest
     environment:
@@ -27,6 +44,7 @@ services:
       - kafka_data:/bitnami/kafka
 
 volumes:
+  db_data_realtime:
   zookeeper_data:
     driver: local
   kafka_data:
