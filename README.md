@@ -4,6 +4,8 @@ Infrastructure solution project for an online product store, with NestJS, React,
 
 - Create a KAKFA cluster:
     - `docker-compose -f docker-compose.yml up -d`
+        
+    ![img.png](kafka_docker.png)
 
 
 - Create a KAFKAJS microservice:
