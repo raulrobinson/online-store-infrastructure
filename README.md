@@ -2,6 +2,8 @@
 
 Infrastructure solution project for an online product store, with NestJS, React, Kafka...
 
+![e-shop.png](img/e-shop.png)
+
 - Create a KAKFA cluster:
     - `docker-compose -f docker-compose.yml up -d`        
   ![kafka_docker.png](img/kafka_docker.png)

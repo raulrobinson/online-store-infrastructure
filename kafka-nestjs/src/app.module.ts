@@ -18,8 +18,8 @@ import { KafkaProducerService } from './kafka.producer.service';
       provide: 'KAFKA_INSTANCE',
       useFactory: async () => {
         return new Kafka({
-          clientId: 'realtime-app',
-          brokers: ['localhost:9092'],
+          clientId: 'my-app',
+          brokers: ['127.0.0.1:9092'],
         });
       },
     },
@@ -28,8 +28,8 @@ import { KafkaProducerService } from './kafka.producer.service';
       provide: 'KAFKA_CLIENT',
       useFactory: async () => {
         return new Kafka({
-          clientId: 'realtime-app',
-          brokers: ['localhost:9092'],
+          clientId: 'my-app',
+          brokers: ['127.0.0.1:9092'],
         });
       },
     },
